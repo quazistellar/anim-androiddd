@@ -24,7 +24,6 @@ public class Activity3 extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         imageView.setImageResource(R.drawable.anim2);
 
-        // Initialize the zoom animation
         zoomInOut = AnimationUtils.loadAnimation(this, R.anim.zoom_in_out);
         imageView.startAnimation(zoomInOut);
 
@@ -42,8 +41,7 @@ public class Activity3 extends AppCompatActivity {
                     break;
             }
 
-            // Start zoom animation again
-            zoomInOut.reset(); // Reset the animation
+            zoomInOut.reset();
             imageView.startAnimation(zoomInOut);
         });
 
@@ -52,7 +50,7 @@ public class Activity3 extends AppCompatActivity {
             finish();
         });
 
-        // Start animation for the "Back" button
+
         buttonToBack.startAnimation(AnimationUtils.loadAnimation(this, R.anim.ss_slider));
     }
 }
