@@ -27,23 +27,6 @@ public class Activity3 extends AppCompatActivity {
         zoomInOut = AnimationUtils.loadAnimation(this, R.anim.zoom_in_out);
         imageView.startAnimation(zoomInOut);
 
-        imageView.setOnClickListener(view -> {
-            currentImageIndex = (currentImageIndex + 1) % 3;
-            switch (currentImageIndex) {
-                case 0:
-                    imageView.setImageResource(R.drawable.anim_1);
-                    break;
-                case 1:
-                    imageView.setImageResource(R.drawable.anim2);
-                    break;
-                case 2:
-                    imageView.setImageResource(R.drawable.anim3);
-                    break;
-            }
-
-            zoomInOut.reset();
-            imageView.startAnimation(zoomInOut);
-        });
 
         Button buttonToBack = findViewById(R.id.buttonToBack);
         buttonToBack.setOnClickListener(view -> {
@@ -51,6 +34,6 @@ public class Activity3 extends AppCompatActivity {
         });
 
 
-        buttonToBack.startAnimation(AnimationUtils.loadAnimation(this, R.anim.ss_slider));
+        buttonToBack.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_up));
     }
 }
